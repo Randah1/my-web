@@ -7,7 +7,7 @@
 <div class="bg-[#f4f1f8] h-fit w-fit rounded-3xl grid grid-cols-4 gap-3 p-3 font-semibold 
  text-[#686f79] text-xl shadow-xl shadow-[rgb(139,148,167)]">
     <div class="bg-blue-300 rounded-full col-span-4 h-12 flex items-center px-4 mb-2 text-white 
-    "> 123</div>
+    shadow-md shadow-[rgb(162,169,184)]"> 123</div>
             <button class="bg-[#f3f6fc]">%</button>
             <button class="bg-[#f3f6fc]">√</button>
             <button class="bg-[#f3f6fc]">CE</button>
