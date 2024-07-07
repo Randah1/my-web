@@ -4,15 +4,21 @@ import SquareRoot from'$lib/icons/Squareroot.svelte';
 import BackSpace from'$lib/icons/BackSpace.svelte';
 
 let equation: string="";
-
+let resultDisplayed= false;
 function addToEquation (value:string)
 {
+    if(resultDisplayed)
+    {equation=value;
+    resultDisplayed=false;
+    }
+   else
     equation +=value;
 }
 
 function restart()
-{
+{ 
     equation="";
+   
 }
 function backspace()
 {
@@ -24,8 +30,6 @@ function backspace()
         case " / ":
         equation=equation.substring(0,equation.length-3);
        break;
-    
-      break;
         default:
         equation=equation.substring(0,equation.length-1);
 
@@ -36,6 +40,7 @@ function backspace()
 function solve()
 {
 equation = eval(equation);
+resultDisplayed=true;
 
 }
 </script>
@@ -47,11 +52,12 @@ equation = eval(equation);
 </svelte:head>
 
 <div 
-   class="bg-[#f4f1f8] h-fit w-fit rounded-3xl grid grid-cols-4 gap-3 p-3 font-semibold 
+   class="bg-[#f4f1f8]  max-w-[15rem] rounded-3xl grid grid-cols-4 gap-3 p-3 font-semibold 
  text-[#686f79] text-xl shadow-xl shadow-[rgb(139,148,167)]  ">
-   <!--TODO fix overflowing numbers -->
+   
+ <!--TODO fix overflowing numbers -->
  <div class="bg-blue-300 rounded-full col-span-4 h-12 flex items-center px-4 mb-2 text-white 
-    shadow-md shadow-[rgb(162,169,184)] ">
+    shadow-md shadow-[rgb(162,169,184)] overflow-x-auto">
     {equation}
  </div>
           
