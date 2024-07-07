@@ -24,8 +24,7 @@ function backspace()
         case " / ":
         equation=equation.substring(0,equation.length-3);
        break;
-       case "100":     
-        equation=equation.substring(0,equation.length-4);
+    
       break;
         default:
         equation=equation.substring(0,equation.length-1);
